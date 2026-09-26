@@ -1,8 +1,7 @@
 def write_music_file(music_file, records):
     with open(music_file, 'w') as file:
-        music_file.write(f"Music library")
-        music_file.write("\n")
-        music_file.write(f"Songs: {len(records)}\n")
+        file.write(f"MULAB, \n") #MULAB stands for Music library
+        file.write(f"Songs: {len(records)}\n")
 
         for record in records:
             line="|".join([
@@ -16,7 +15,7 @@ def write_music_file(music_file, records):
             ])
             file.write(line+"\n")
 
-sample_song=[
+sample_songs=[
     {
         "ID": "000001",
         "Song name": "What is love?",
@@ -26,7 +25,7 @@ sample_song=[
         "Duration": "3 mins 44 seconds",
         "Year released": "2018"},
     {
-        "ID": "00002",
+        "ID": "000002",
         "Song name": "Love Story",
         "Artist": "Taylor Swift",
         "Album": "Fearless",
@@ -35,7 +34,7 @@ sample_song=[
         "Year released": "2008"
     }
 ]
-write_music_file("music_sample.txt", sample_song)
+write_music_file("music_sample.txt", sample_songs)
 print("File successfully created!")
 
 
