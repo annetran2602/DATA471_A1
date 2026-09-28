@@ -13,7 +13,7 @@ def read_music_file(music_file):
             if len(fields)!=7:
                 print("Error, invalid file format")
             record={
-                "ID":int(fields[0]),
+                "Song ID":int(fields[0]),
                 "Song name":fields[1],
                 "Artist":fields[2],
                 "Album":fields[3],
@@ -26,12 +26,12 @@ def read_music_file(music_file):
 
 def display_music(records):
     for record in records:
-        print(f"{record["ID"]} | "
+        print(f"{record["Song ID"]} | "
         f"{record["Song name"]} | "
         f"{record["Artist"]} | "
         f"{record["Album"]} | "
         f"{record["Genre"]} | "
-        f"{record["Duration"]} | "
+        f"{record["Duration"]} seconds | "
         f"{record["Year released"]} | "
 )
 

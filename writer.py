@@ -6,7 +6,7 @@ def write_music_file(music_file, records):
 
         for record in records:
             line="|".join([
-                str(record["ID"]),
+                str(record["Song ID"]),
                 record["Song name"],
                 record["Artist"],
                 record["Album"],
@@ -18,7 +18,7 @@ def write_music_file(music_file, records):
 
 sample_songs=[
     {
-        "ID": 100001,
+        "Song ID": 100001,
         "Song name": "What is love?",
         "Artist": "Twice",
         "Album": "What is love?",
@@ -26,7 +26,7 @@ sample_songs=[
         "Duration": 224, # Duration converted to seconds in order to calc sum of duration of library (3mins44sec)
         "Year released": "2018"},
     {
-        "ID": 100002,
+        "Song ID": 100002,
         "Song name": "Love Story",
         "Artist": "Taylor Swift",
         "Album": "Fearless",
