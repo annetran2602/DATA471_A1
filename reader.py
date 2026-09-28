@@ -34,6 +34,33 @@ def display_music(records):
         f"{record["Duration"]} | "
         f"{record["Year released"]} | "
 )
+
+# Searchability
+def search_song_name(records, songName): # Search by song's name
+    for record in records:
+        if record["Song name"] == songName:
+            return record
+
+def search_artist(records, artist): # Search by artist's name
+    for record in records:
+        if record["Artist"] == artist:
+            return record
+
+def search_album(records, album): # Search by album's name
+    for record in records:
+        if record["Album"] == album:
+            return record
+
+def search_genre(records, genre): # Search by genre
+    for record in records:
+        if record["Genre"] == genre:
+            return record
+
+def search_yearReleased(records, yearReleased): # Search by year released
+    for record in records:
+        if record["Year released"] == yearReleased:
+            return record
+
 # Read the music file
 songs=read_music_file("music_sample.txt")
 
