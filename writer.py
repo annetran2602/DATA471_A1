@@ -1,6 +1,6 @@
 def write_music_file(music_file, records):
     with open(music_file, 'w') as file:
-        file.write(f"MULAB \n") #MULAB stands for Music library
+        file.write(f"MULIB \n") #MULIB stands for Music library
         file.write(f"Songs: {len(records)} | ")
         file.write(f"Durations: {sum(record["Duration"] for record in records)} seconds \n")
 

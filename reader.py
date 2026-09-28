@@ -2,16 +2,22 @@ def read_music_file(music_file):
     records=[]
     with open(music_file, "r") as file:
         header=file.readline().strip().split("|")
-        if header[0]!="MULAB":
+        if header[0] != "MULIB":
             print("Error, invalid file format")
-        summary=file.readline().strip()
+        # Read the summary line
+        file.readline()
         for line in file:
             line=line.strip()
+
             if not line:
                 continue
+
             fields=line.split("|")
+
             if len(fields)!=7:
                 print("Error, invalid file format")
+                continue
+
             record={
                 "Song ID":int(fields[0]),
                 "Song name":fields[1],
@@ -24,15 +30,25 @@ def read_music_file(music_file):
             records.append(record)
     return records
 
+def display_header():
+    print(f"{'Song ID':<10} | "
+          f"{'Song name':<30} | "
+          f"{'Artist':<20} | "
+          f"{'Album':<20} | "
+          f"{'Genre':<15} | "
+          f"{'Duration':<10} | "
+          f"{'Year released':<10}")
+    print(
+        "----------------------------------------------------------------------------------------------------------------------------------------------\n")
 def display_music(records):
     for record in records:
-        print(f"{record["Song ID"]} | "
-        f"{record["Song name"]} | "
-        f"{record["Artist"]} | "
-        f"{record["Album"]} | "
-        f"{record["Genre"]} | "
-        f"{record["Duration"]} seconds | "
-        f"{record["Year released"]} | "
+        print(f"{record['Song ID']:<10} | "
+        f"{record['Song name']:<30} | "
+        f"{record['Artist']:<20} | "
+        f"{record['Album']:<20} | "
+        f"{record['Genre']:<15} | "
+        f"{record['Duration']:<10} | "
+        f"{record['Year released']:<10}"
 )
 
 # Searchability
@@ -63,14 +79,13 @@ def search_yearReleased(records, yearReleased): # Search by year released
 
 # Read the music file
 songs=read_music_file("music_sample.txt")
-
 print("Music Library")
 print("-----------------\n")
-
-display_music(songs)
-
 print("Number of songs:", len(songs))
 if songs:
     duration=sum(record["Duration"] for record in songs)
     print("Duration:", duration,"seconds")
+display_header()
+display_music(songs)
+
 
