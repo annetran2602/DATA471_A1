@@ -52,30 +52,44 @@ def display_music(records):
 )
 
 # Searchability
-def search_song_name(records, songName): # Search by song's name
+def search_song_name(records, songName):
+    matches = []
     for record in records:
-        if record["Song name"] == songName:
-            return record
+        if record["Song name"].strip().lower() == songName.strip().lower():
+            matches.append(record)
+    return matches
 
-def search_artist(records, artist): # Search by artist's name
+
+def search_artist(records, artist):
+    matches = []
     for record in records:
-        if record["Artist"] == artist:
-            return record
+        if record["Artist"].strip().lower() == artist.strip().lower():
+            matches.append(record)
+    return matches
 
-def search_album(records, album): # Search by album's name
+
+def search_album(records, album):
+    matches = []
     for record in records:
-        if record["Album"] == album:
-            return record
+        if record["Album"].strip().lower() == album.strip().lower():
+            matches.append(record)
+    return matches
 
-def search_genre(records, genre): # Search by genre
+
+def search_genre(records, genre):
+    matches = []
     for record in records:
-        if record["Genre"] == genre:
-            return record
+        if record["Genre"].strip().lower() == genre.strip().lower():
+            matches.append(record)
+    return matches
 
-def search_yearReleased(records, yearReleased): # Search by year released
+
+def search_yearReleased(records, yearReleased):
+    matches = []
     for record in records:
         if record["Year released"] == yearReleased:
-            return record
+            matches.append(record)
+    return matches
 
 # Read the music file
 songs=read_music_file("music_sample.txt")

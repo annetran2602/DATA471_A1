@@ -23,84 +23,80 @@ records=[
 ]
 write_music_file("output.mulib", records)
 read_records=read_music_file("output.mulib")
-print("Number of songs:", len(read_records))
 
 # Search record using info (song's name, artist, genre, album, year released)
-search_songName=search_song_name(read_records, "A Thousand Years")
-search_artist=search_artist(read_records, "Ed Sheeran")
-search_album=search_album(read_records, "X")
-search_genre=search_genre(read_records, "Pop")
-search_yearReleased=search_yearReleased(read_records, 2011)
+songName_result=search_song_name(read_records, "A Thousand Years")
+print("Songs with matching name: ")
+if songName_result:
+    for record in songName_result:
+        print(f"Songs: {record['Song ID']} | "
+            f"{record['Song name']} | "
+            f"{record['Artist']} | "
+            f"{record['Album']} | "
+            f"{record['Genre']} | "
+            f"{record['Duration']} | "
+            f"{record['Year released']}"
+        )
+else:
+    print("No song found")
 
-# Print results
-print("Songs matching name: A Thousand Years")
-if search_songName:
-    record=search_songName
-    print(
-        f"Songs: {record['Song ID']} | "
+artist_result=search_artist(read_records, "Ed Sheeran")
+print("Songs with matching artist: ")
+if artist_result:
+    for record in artist_result:
+        print(f"Songs: {record['Song ID']} | "
         f"{record['Song name']} | "
         f"{record['Artist']} | "
         f"{record['Album']} | "
         f"{record['Genre']} | "
         f"{record['Duration']} | "
-        f"{record['Year released']}")
+        f"{record['Year released']}"
+    )
 else:
-    print("No songs matching name")
+    print("No song found")
 
-print("Songs by artist: Ed Sheeran", search_artist)
-if search_artist:
-    record=search_artist
-    print(
-        f"Songs: {record['Song ID']} | "
-        f"{record['Song name']} | "
-        f"{record['Artist']} | "
-        f"{record['Album']} | "
-        f"{record['Genre']} | "
-        f"{record['Duration']} | "
-        f"{record['Year released']}")
+album_result=search_album(read_records, "X")
+print("Songs with matching album: ")
+if album_result:
+    for record in album_result:
+        print(f"Songs: {record['Song ID']} | "
+              f"{record['Song name']} | "
+              f"{record['Artist']} | "
+              f"{record['Album']} | "
+              f"{record['Genre']} | "
+              f"{record['Duration']} | "
+              f"{record['Year released']}"
+              )
 else:
-    print("No songs matching artist")
+    print("No song found")
 
-print("Songs in album: X", search_album)
-if search_album:
-    record=search_album
-    print(
-        f"Songs: {record['Song ID']} | "
-        f"{record['Song name']} | "
-        f"{record['Artist']} | "
-        f"{record['Album']} | "
-        f"{record['Genre']} | "
-        f"{record['Duration']} | "
-        f"{record['Year released']}")
+genre_result=search_genre(read_records, "Pop")
+print("Songs with matching genre: ")
+if genre_result:
+    for record in genre_result:
+        print(f"Songs: {record['Song ID']} | "
+              f"{record['Song name']} | "
+              f"{record['Artist']} | "
+              f"{record['Album']} | "
+              f"{record['Genre']} | "
+              f"{record['Duration']} | "
+              f"{record['Year released']}"
+              )
 else:
-    print("No songs matching album")
+    print("No song found")
 
-print("Songs in genre: Pop", search_genre)
-if search_genre:
-    record=search_genre
-    print(
-        f"Songs: {record['Song ID']} | "
-        f"{record['Song name']} | "
-        f"{record['Artist']} | "
-        f"{record['Album']} | "
-        f"{record['Genre']} | "
-        f"{record['Duration']} | "
-        f"{record['Year released']}")
+yearReleased_result=search_yearReleased(read_records, 2011)
+print("Songs with matching year released: ")
+if yearReleased_result:
+    for record in yearReleased_result:
+        print(f"Songs: {record['Song ID']} | "
+              f"{record['Song name']} | "
+              f"{record['Artist']} | "
+              f"{record['Album']} | "
+              f"{record['Genre']} | "
+              f"{record['Duration']} | "
+              f"{record['Year released']}"
+              )
 else:
-    print("No songs matching genre")
-
-print("Songs released in 2014:", search_yearReleased)
-if search_yearReleased:
-    record=search_yearReleased
-    print(
-        f"Songs: {record['Song ID']} | "
-        f"{record['Song name']} | "
-        f"{record['Artist']} | "
-        f"{record['Album']} | "
-        f"{record['Genre']} | "
-        f"{record['Duration']} | "
-        f"{record['Year released']}")
-else:
-    print("No songs matching released year")
-
+    print("No song found")
 

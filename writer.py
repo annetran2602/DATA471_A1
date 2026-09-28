@@ -5,16 +5,14 @@ def write_music_file(music_file, records):
         file.write(f"Durations: {sum(record["Duration"] for record in records)} seconds \n")
 
         for record in records:
-            line="|".join([
-                str(record["Song ID"]),
-                record["Song name"],
-                record["Artist"],
-                record["Album"],
-                record["Genre"],
-                str(record["Duration"]),
-                str(record["Year released"]).lower()
-            ])
-            file.write(line+"\n")
+            file.write(
+              f"{record['Song ID']} | "
+              f"{record['Song name']} | "
+              f"{record['Artist']} | "
+              f"{record['Album']} | "
+              f"{record['Genre']} | "
+              f"{record['Duration']} | "
+              f"{record['Year released']}\n")
 
 sample_songs=[
     {
