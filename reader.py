@@ -1,6 +1,6 @@
 def read_music_file(music_file):
     records=[]
-    with open(music_file, "r") as file:
+    with open(music_file, "r") as file:# open file to read
         header=file.readline().strip().split("|")
         if header[0] != "MULIB":
             print("Error, invalid file format")
@@ -30,6 +30,7 @@ def read_music_file(music_file):
             records.append(record)
     return records
 
+# Display column header
 def display_header():
     print(f"{'Song ID':<10} | "
           f"{'Song name':<30} | "
@@ -40,6 +41,8 @@ def display_header():
           f"{'Year released':<10}")
     print(
         "----------------------------------------------------------------------------------------------------------------------------------------------\n")
+
+# Display record
 def display_music(records):
     for record in records:
         print(f"{record['Song ID']:<10} | "
@@ -93,6 +96,8 @@ def search_yearReleased(records, yearReleased):
 
 # Read the music file
 songs=read_music_file("music_sample.txt")
+
+# Display Music Library
 print("Music Library")
 print("-----------------\n")
 print("Number of songs:", len(songs))
