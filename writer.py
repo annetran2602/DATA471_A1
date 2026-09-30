@@ -31,9 +31,36 @@ sample_songs=[
         "Genre": "Country pop",
         "Duration": 237, # Duration convert to seconds to easy to calc the total duration of songs in music library
         "Year released": "2008"
+    },
+{
+        "Song ID": 100003,
+        "Song name": "Photograph",
+        "Artist": "Ed Sheeran",
+        "Album": "X",
+        "Genre": "Pop",
+        "Duration": 259, # Duration convert to seconds to easy to calc the total duration of songs in music library
+        "Year released": "2014"
+    },
+{
+        "Song ID": 100004,
+        "Song name": "Shape of You",
+        "Artist": "Ed Sheeran",
+        "Album": "Divide",
+        "Genre": "Pop",
+        "Duration": 279, # Duration convert to seconds to easy to calc the total duration of songs in music library
+        "Year released": "2017"
+    },
+{
+        "Song ID": 100005,
+        "Song name": "Blinding Lights",
+        "Artist": "The Weeknd",
+        "Album": "After Hours",
+        "Genre": "Pop",
+        "Duration": 200, # Duration convert to seconds to easy to calc the total duration of songs in music library
+        "Year released": "2020"
     }
 ]
-write_music_file("music_sample.txt", sample_songs)
+write_music_file("sample_data_1.txt", sample_songs)
 print("File successfully created!")
 
 
