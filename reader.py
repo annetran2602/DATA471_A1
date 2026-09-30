@@ -95,7 +95,7 @@ def search_yearReleased(records, yearReleased):
     return matches
 
 # Read the music file
-songs=read_music_file("sample_data_2.txt")
+songs=read_music_file("sample_data_2")
 
 # Display Music Library
 print("Music Library")

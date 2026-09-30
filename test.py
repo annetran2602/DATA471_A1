@@ -3,7 +3,7 @@ from writer import write_music_file
 
 records=[
     {
-    "Song ID":10003,
+    "Song ID":30003,
     "Song name": "Photograph",
     "Artist": "Ed Sheeran",
     "Album": "X",
@@ -12,13 +12,22 @@ records=[
     "Year released": 2014
 },
     {
-    "Song ID":10004,
+    "Song ID":30004,
     "Song name": "A Thousand Years",
     "Artist": "Christina Perri",
     "Album": "None", # no album belong to
     "Genre": "Pop",
     "Duration": 259,
     "Year released": 2011
+    },
+    {
+        "Song ID": 10005,
+        "Song name": "What is Love?",
+        "Artist": "TWICE",
+        "Album": "What Is Love?",
+        "Genre": "K-pop",
+        "Duration": 224,
+        "Year released": 2018
     }
 ]
 
@@ -42,7 +51,7 @@ if songName_result:
 else:
     print("No song found")
 
-artist_result=search_artist(read_records, "Ed Sheeran")
+artist_result=search_artist(read_records, "Twice")
 print("Songs with matching artist: ")
 if artist_result:
     for record in artist_result:
